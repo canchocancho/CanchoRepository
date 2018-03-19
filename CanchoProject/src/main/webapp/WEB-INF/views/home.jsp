@@ -11,6 +11,13 @@
 	Hello world!  
 </h1>
 
-<P>  여러분 안녕하세욤 - 다빈 180319 </P>
+<P>  The time on the server is ${serverTime}. </P>
+kachu
+kakaka
+>>>>>>> branch 'master' of https://github.com/canchocancho/CanchoRepository.git
+
+Davin
+davindavin
+
 </body>
 </html>
