@@ -7,16 +7,10 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-
-다빈 : 깃허브 다 까먹음...
-다빈 : 왜 안 됨????
-
-미리 : 테스트
+	<ul>
+		<li><a href="member/joinForm">회원가입</a></li>
+		<li><a>로그인</a></li>
+	</ul>
 
 </body>
 </html>
