@@ -1,7 +1,5 @@
 package lets.eat.cancho;
 
-import java.util.Locale;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,7 +19,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value="goPost", method=RequestMethod.GET)
+	@RequestMapping(value="writePost", method=RequestMethod.GET)
 	public String goPost(){
 		logger.info("POST");
 		
