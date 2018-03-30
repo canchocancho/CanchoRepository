@@ -20,7 +20,6 @@ import lets.eat.cancho.post.dao.PostDAO;
 import lets.eat.cancho.post.vo.Post;
 
 @Controller
-@RequestMapping(value="post")
 public class PostController {
 	
 	@Autowired

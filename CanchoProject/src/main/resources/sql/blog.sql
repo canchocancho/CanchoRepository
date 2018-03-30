@@ -20,11 +20,11 @@ CREATE TABLE blog_post
     post_title_clean    VARCHAR2(10)     NULL, 
     post_file           VARCHAR2(300)    NOT NULL, 
     user_id             VARCHAR2(45)     NOT NULL, 
-    post_date           DATE             default sysdate, 
+    post_date           DATE             default SYSDATE, 
     CONSTRAINT BLOG_POST_PK PRIMARY KEY (post_num)
 );
 
-CREATE SEQUENCE blog_post_SEQ
+CREATE SEQUENCE blog_post_seq
 START WITH 1
 INCREMENT BY 1;
 
@@ -74,23 +74,3 @@ CREATE TABLE blog_friend
     CONSTRAINT FK_blog_friend_user_id_blog_us FOREIGN KEY (user_id)
     REFERENCES blog_user (user_id)
 )
-
-
-
-
-=======
-CREATE TABLE blog_post
-(
-    post_num            INT              NOT NULL, 
-    post_title          VARCHAR2(144)    NOT NULL, 
-    post_title_clean    VARCHAR2(10)     NULL, 
-    post_file           VARCHAR2(300)    NOT NULL, 
-    user_id             VARCHAR2(45)     NOT NULL, 
-    post_date           DATE             default SYSDATE, 
-    CONSTRAINT BLOG_POST_PK PRIMARY KEY (post_num)
-);
-
-CREATE SEQUENCE blog_post_seq
-START WITH 1
-INCREMENT BY 1;
->>>>>>> branch 'master' of https://github.com/canchocancho/CanchoRepository.git
