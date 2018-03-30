@@ -313,7 +313,7 @@
   <div id="firepad">
   
   		<!-- 히든폼 -->
-		<form action="writePost" method="post" name="hidden_form" style="position: relative;">
+		<form action="write" method="post" name="hidden_form" style="position: relative;">
 			제목 <input type="text" id="post_title" name="post_title">
 			<input type="hidden" id="hidden_data" name="hidden_data">
 		</form>
@@ -351,7 +351,7 @@
       //// Initialize contents.
       firepad.on('ready', function() {
         if (firepad.isHistoryEmpty()) {
-          firepad.setText('Check out the user list to the left!');
+          firepad.setText('당신의 하루를 기록해보세요.');
         }
       });
     }

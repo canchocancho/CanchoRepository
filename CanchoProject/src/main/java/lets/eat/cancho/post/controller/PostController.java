@@ -81,7 +81,7 @@ public class PostController {
 		
 		logger.info("글쓰기 종료");
 
-		return "../";
+		return "redirect:/";
 	}
 
 }
