@@ -20,7 +20,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="writePost", method=RequestMethod.GET)
-	public String goPost(){
+	public String writePost(){
 		logger.info("POST");
 		
 		return "post";
