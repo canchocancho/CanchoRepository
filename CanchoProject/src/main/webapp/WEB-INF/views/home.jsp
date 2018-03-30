@@ -12,30 +12,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-kachu
-kakaka
->>>>>>> branch 'master' of https://github.com/canchocancho/CanchoRepository.git
 
-Davin
-davindavin
-
-yujin! new!!
-
-DAVIN!!!! CANCHO!!!!
-good!!!!!!!!
-
-TEST TEST TEST 2018/03/30
-TEST222
-
-
-
-
-
-
-
-Miri YOO
-Second Test!!!!
-
-PikaPika
 </body>
 </html>
