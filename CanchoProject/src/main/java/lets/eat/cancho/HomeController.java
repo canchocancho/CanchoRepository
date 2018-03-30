@@ -20,6 +20,7 @@ public class HomeController {
 		return "home";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value="writePost", method=RequestMethod.GET)
 	public String writePost(){
 		logger.info("POST");
@@ -31,4 +32,6 @@ public class HomeController {
 	
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/canchocancho/CanchoRepository.git
 }

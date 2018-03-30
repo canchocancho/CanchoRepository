@@ -12,6 +12,8 @@
 	TOMOlog  
 </h1>
 
+<p>일단 아이디 aaa로 로그인이 되어 있다고 가정한 상태(session 돌고 있음)</p>
+
 	<ul>
 		<li><a href="writePost">포스트 쓰기</a></li>
 		<li><a href="user/joinForm">회원가입</a></li>
