@@ -314,7 +314,7 @@
   
   		<!-- 히든폼 -->
 		<form action="write" method="post" name="hidden_form" style="position: relative;">
-			제목 <input type="text" id="post_title" name="post_title">
+			제목 <input type="text" id="post_title" name="post_title" autocomplete="off">
 			<input type="hidden" id="hidden_data" name="hidden_data">
 		</form>
   
