@@ -5,7 +5,7 @@ CREATE TABLE blog_post
     post_title_clean    VARCHAR2(10)     NULL, 
     post_file           VARCHAR2(300)    NOT NULL, 
     user_id             VARCHAR2(45)     NOT NULL, 
-    post_date           DATE             NOT NULL, 
+    post_date           DATE             default SYSDATE, 
     CONSTRAINT BLOG_POST_PK PRIMARY KEY (post_num)
 );
 

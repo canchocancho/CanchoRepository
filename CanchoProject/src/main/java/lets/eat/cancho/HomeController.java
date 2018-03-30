@@ -1,7 +1,5 @@
 package lets.eat.cancho;
 
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,16 +17,6 @@ public class HomeController {
 		logger.info("HOME");
 		
 		return "home";
-	}
-	
-	@RequestMapping(value="writePost", method=RequestMethod.GET)
-	public String writePost(HttpSession session){
-		logger.info("POST");
-		
-		//일단은 로그인을 했다고 가정(아이디 : aaa)
-		session.setAttribute("loginId", "aaa");
-		
-		return "post";
 	}
 	
 }
