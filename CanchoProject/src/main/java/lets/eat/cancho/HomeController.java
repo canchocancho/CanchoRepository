@@ -1,4 +1,5 @@
 package lets.eat.cancho;
+import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,4 +20,18 @@ public class HomeController {
 		return "home";
 	}
 	
+<<<<<<< HEAD
+	@RequestMapping(value="writePost", method=RequestMethod.GET)
+	public String writePost(){
+		logger.info("POST");
+		
+		return "post";
+	}
+	
+	
+	
+	
+	
+=======
+>>>>>>> branch 'master' of https://github.com/canchocancho/CanchoRepository.git
 }
