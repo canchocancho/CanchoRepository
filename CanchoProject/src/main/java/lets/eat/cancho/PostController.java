@@ -9,14 +9,19 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import lets.eat.cancho.post.Post;
+import lets.eat.cancho.post.PostDAO;
 
 @Controller
 public class PostController {
+	
+	@Autowired
+	PostDAO dao;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -33,7 +38,7 @@ public class PostController {
 	@RequestMapping(value="write", method=RequestMethod.POST)
 	public String saveData(String post_title, String hidden_data, HttpSession session){
 		
-		logger.info("str : "+hidden_data);
+		logger.info("WRITE");
 		
         Date date = new Date(); 
         SimpleDateFormat simpleDate = new SimpleDateFormat("_yyMMdd_hhmmss_");
@@ -47,8 +52,6 @@ public class PostController {
         post.setPost_file(fileName);
         post.setUser_id(loginId);
         
-        System.out.println(post);
-
         try{
             //BufferedWriter 와 FileWriter를 조합하여 사용 (속도 향상)
             BufferedWriter fw = new BufferedWriter(new FileWriter(fileName, true));
@@ -63,6 +66,18 @@ public class PostController {
         }catch(Exception e){
             e.printStackTrace();
         }
+        
+		int result = dao.writePost(post);
+		
+/*		if(result != 1){
+			//등록실패
+			model.addAttribute("errorMsg", "오류가 발생했습니다.");
+			logger.info("글쓰기 실패");
+			
+			return "board/writeBoard";
+		}*/
+		
+		logger.info("글쓰기 종료");
 
 		return "";
 	}
