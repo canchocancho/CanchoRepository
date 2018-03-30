@@ -1,4 +1,4 @@
-package lets.eat.cancho;
+package lets.eat.cancho.post.controller;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -14,8 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import lets.eat.cancho.post.Post;
-import lets.eat.cancho.post.PostDAO;
+import lets.eat.cancho.HomeController;
+import lets.eat.cancho.post.dao.PostDAO;
+import lets.eat.cancho.post.vo.Post;
 
 @Controller
 public class PostController {

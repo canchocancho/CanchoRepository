@@ -1,4 +1,4 @@
-package lets.eat.cancho.post;
+package lets.eat.cancho.post.vo;
 
 public class Post {
 
