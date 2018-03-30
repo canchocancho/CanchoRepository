@@ -10,8 +10,19 @@
 	<insert id="writePost" parameterType="Post">
 		insert into
 			blog_post
+			(
+			post_num
+			,post_title
+			,post_file
+			,user_id
+			)
 		values
-			(blog_post_seq.nextval, post_title, 'null', #{post_file}, #{user_id}, sysdate) 
+			(
+			blog_post_seq.nextval
+			,#{post_title}
+			,#{post_file}
+			,#{user_id}
+			) 
 	</insert>
 
 </mapper>
