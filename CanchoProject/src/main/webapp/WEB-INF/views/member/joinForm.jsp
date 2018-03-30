@@ -13,6 +13,8 @@
 	<c:if test ="${errorMsg != null}">
 		alert("${errorMsg}")
 	</c:if>
+		
+	/**테스트*/
 	
 	$(function(){
 		
