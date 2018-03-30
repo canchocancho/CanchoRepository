@@ -12,5 +12,13 @@
 		<li><a>로그인</a></li>
 	</ul>
 
+<h1>
+	TOMOlog  
+</h1>
+
+	<ul>
+		<li><a href="goPost">포스트 쓰기</a></li>
+	</ul>
+
 </body>
 </html>
