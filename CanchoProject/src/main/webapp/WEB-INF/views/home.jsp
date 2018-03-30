@@ -11,7 +11,9 @@
 	TOMOlog  
 </h1>
 
-
+	<ul>
+		<li><a href="goPost">포스트 쓰기</a></li>
+	</ul>
 
 </body>
 </html>
