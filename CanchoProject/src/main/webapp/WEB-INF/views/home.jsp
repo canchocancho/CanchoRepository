@@ -8,15 +8,10 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	TOMOlog  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
 
-다빈 : 깃허브 다 까먹음...
-다빈 : 왜 안 됨????
-
-미리 : 테스트
 
 </body>
 </html>
