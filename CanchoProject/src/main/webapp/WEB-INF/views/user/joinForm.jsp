@@ -13,14 +13,13 @@
 	<c:if test ="${errorMsg != null}">
 		alert("${errorMsg}")
 	</c:if>
-		
-	/**테스트 테스트*/
 	
 	$(function(){
 		
+		//ID중복체크
 		$('#btn1').on('click', function(){
 			
-			var id = $('#id').val();
+			var id = $('#user_id').val();
 			
 			$.ajax({
 				url : "idCheck",
@@ -43,13 +42,18 @@
 			});
 		});
 		
+		//이메일 인증
+		$('#btn2').on('click', function(){
+			
+		});
 		
+		//유효성 검사
 		$('#f1').on('submit',function(){
-			var id = $('#id').val();
-			var password = $('#password').val();
+			var id = $('#user_id').val();
+			var password = $('#user_password').val();
 			var password2 = $('#password2').val();
-			var name =  $('#name').val();
-			var email = $('#email').val();
+			var name =  $('#user_name').val();
+			var email = $('#user_email').val();
 			
 			
 			if (id.length == 0) {
@@ -92,7 +96,7 @@
 			<tr>
 				<th>ID</th>
 				<td>
-					<input type="text" id="id" name="id" value="${member.id }"
+					<input type="text" id="user_id" name="user_id" value="${user.user_id }"
 					 placeholder="id중복확인 사용"> 
 					<!-- name은 vo의 변수명과 같아야한다. -->
 					<input type="button" value="id중복확인" id="btn1">
@@ -105,37 +109,28 @@
 			<tr>
 				<th>비밀번호</th>
 				<td>
-					<input type="password" name="password" id="password" 
-					value="${member.password}" placeholder="비밀번호 입력"><br>
+					<input type="password" name="user_password" id="user_password" 
+					value="${user.user_password}" placeholder="비밀번호 입력"><br>
 					<input type="password" id="password2" placeholder="비밀번호 다시 입력">
 				</td>
 			</tr>
 			<tr>
 				<th>이름</th>
 				<td>
-					<input type="text" name="name" id="name" value="${member.name }"
+					<input type="text" name="user_name" id="user_name" value="${user.user_name }"
 					placeholder="이름 입력">
-				</td>
-			</tr>
-			<tr>
-				<th>성별</th>
-				<td>
-					<input type="radio" name="gender" value="male" checked="checked">남자 
-					<input type="radio" name="gender" value="female">여자
 				</td>
 			</tr>
 			<tr>
 				<th>이메일</th>
 				<td>
-					<input type="text" name="email" id="email" value="${member.email }"
+					<input type="text" name="user_email" id="user_email" value="${user.user_email }"
 					placeholder="이메일 입력">
-				</td>
-			</tr>
-			<tr>
-				<th>전화번호</th>
-				<td>
-					<input type="text" name="phone" id="phone" value="${member.phone }"
-					placeholder="전화번호 입력">
+					<input type="button" value="이메일 인증" id="btn2">
+					<div id="emailCheckResult">
+						<!-- 아이디 중복확인 결과 나타내기 -->
+						
+					</div>
 				</td>
 			</tr>
 			<tr>
