@@ -313,7 +313,7 @@
   <div id="firepad">
   
   		<!-- 히든폼 -->
-		<form action="write" method="post" name="hidden_form" style="position: relative;">
+		<form action="writePost" method="post" name="hidden_form" style="position: relative;">
 			제목 <input type="text" id="post_title" name="post_title">
 			<input type="hidden" id="hidden_data" name="hidden_data">
 		</form>

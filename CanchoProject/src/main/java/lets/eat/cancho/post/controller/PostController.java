@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,6 +20,7 @@ import lets.eat.cancho.post.dao.PostDAO;
 import lets.eat.cancho.post.vo.Post;
 
 @Controller
+@RequestMapping(value="post")
 public class PostController {
 	
 	@Autowired
@@ -33,11 +35,11 @@ public class PostController {
 		//일단은 로그인을 했다고 가정(아이디 : aaa)
 		session.setAttribute("loginId", "aaa");
 		
-		return "post";
+		return "post/postForm";
 	}
 	
 	@RequestMapping(value="write", method=RequestMethod.POST)
-	public String saveData(String post_title, String hidden_data, HttpSession session){
+	public String saveData(String post_title, String hidden_data, HttpSession session, Model model){
 		
 		logger.info("WRITE");
 		
@@ -70,17 +72,17 @@ public class PostController {
         
 		int result = dao.writePost(post);
 		
-/*		if(result != 1){
+		if(result != 1){
 			//등록실패
 			model.addAttribute("errorMsg", "오류가 발생했습니다.");
 			logger.info("글쓰기 실패");
 			
-			return "board/writeBoard";
-		}*/
+			return "post/writePost";
+		}
 		
 		logger.info("글쓰기 종료");
 
-		return "";
+		return "../";
 	}
 
 }
