@@ -7,7 +7,7 @@
 <head>
 	<title>Post</title>
 	
-	<script type="text/javascript" src="/resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery-1.12.4.min.js"></script>
 
   <meta charset="utf-8" />
   <!-- Firebase -->
@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
   <!-- Firepad -->
-  <link rel="stylesheet" href="/resources/css/firepad.css" />
+  <link rel="stylesheet" href="resources/css/firepad.css" />
   <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 
   <!-- Firepad Userlist -->
-  <link rel="stylesheet" href="/resources/css/firepad-userlist.css" />
+  <link rel="stylesheet" href="resources/css/firepad-userlist.css" />
 
   <style>
     html { height: 100%; }
@@ -299,21 +299,26 @@
 </head>
 
 <body onload="init()">
+
   <div id="userlist">
+  
   		<!-- 초대하기 -->
-		<input type="button" id="invite" name="invite" onclick="invite();" value="초대" style="float:left;"/>
+		<input type="button" id="invite" name="invite" onclick="invite();" value="초대" style="float: left;"/>
 		
 		<!-- 저장하기 -->
-		<input type="button" id="save" name="save" onclick="save();" value="저장" style="float:left;"/>
-		
-		<!-- 히든폼 -->
-		<form action="saveData" method="post" name="hidden_form" style="float:left;">
+		<input type="button" id="save" name="save" onclick="save();" value="저장" style="float: left;"/>
+
+  </div>
+  
+  <div id="firepad">
+  
+  		<!-- 히든폼 -->
+		<form action="saveData" method="post" name="hidden_form" style="position: relative;">
 			제목 <input type="text" id="title" name="title">
 			<input type="hidden" id="hidden_data" name="hidden_data">
 		</form>
-  </div>
   
-  <div id="firepad"></div>
+  </div>
 
   <script>
     function init() {
