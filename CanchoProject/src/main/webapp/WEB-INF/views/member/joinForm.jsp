@@ -14,7 +14,7 @@
 		alert("${errorMsg}")
 	</c:if>
 		
-	/**테스트*/
+	/**테스트 테스트*/
 	
 	$(function(){
 		
