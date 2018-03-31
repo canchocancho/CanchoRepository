@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>Post</title>
+	<title>POST</title>
 	
 	<script type="text/javascript" src="resources/js/jquery-1.12.4.min.js"></script>
 

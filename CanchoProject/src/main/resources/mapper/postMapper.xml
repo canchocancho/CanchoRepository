@@ -24,5 +24,25 @@
 			,#{user_id}
 			) 
 	</insert>
+	
+	<!-- 포스트 목록 -->
+	<select id="postList" resultType="Post">
+		select
+			*
+		from
+			blog_post
+		order by
+			post_num
+	</select>
+	
+	<!-- 포스트 파일명 불러오기 -->
+	<select id="readPost" parameterType="int">
+		select
+			post_file
+		from
+			blog_post
+		where
+			post_num = #{post_num}
+	</select>
 
 </mapper>

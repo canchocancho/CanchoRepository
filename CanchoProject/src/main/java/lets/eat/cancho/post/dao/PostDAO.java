@@ -54,5 +54,24 @@ public class PostDAO {
 		
 		return list;
 	}
+	
+	//포스트 파일명 가져오기
+	public String readPost(int post_num){
+		
+		logger.info("포스트 파일명 가져오기");
+		
+		PostMapper mapper = session.getMapper(PostMapper.class);
+		
+		String post_file = null;
+
+		try{
+			post_file = mapper.readPost(post_num);
+			
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return post_file;
+	}
 
 }
