@@ -76,7 +76,7 @@ public class PostController {
 			model.addAttribute("errorMsg", "오류가 발생했습니다.");
 			logger.info("글쓰기 실패");
 			
-			return "post/writePost";
+			return "post/postForm";
 		}
 		
 		logger.info("글쓰기 종료");

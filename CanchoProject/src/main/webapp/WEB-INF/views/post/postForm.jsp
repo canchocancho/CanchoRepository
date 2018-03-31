@@ -289,6 +289,14 @@
 		}
 		
 		function save(){
+			
+			var title = document.getElementById("post_title");
+			
+			if(title.value == ''){
+				alert('제목을 입력하세요.');
+				return false;
+			}
+			
 			var str = $(".CodeMirror.cm-s-default.CodeMirror-wrap").html();
 			var hidden_form = document.hidden_form;
 			
