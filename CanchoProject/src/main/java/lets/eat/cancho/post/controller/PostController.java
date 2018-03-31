@@ -3,6 +3,7 @@ package lets.eat.cancho.post.controller;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import lets.eat.cancho.HomeController;
 import lets.eat.cancho.post.dao.PostDAO;
 import lets.eat.cancho.post.vo.Post;
+import www.spring.finalex.board.vo.Board;
 
 @Controller
 public class PostController {
@@ -82,6 +84,19 @@ public class PostController {
 		logger.info("글쓰기 종료");
 
 		return "redirect:/";
+	}
+	
+	@RequestMapping(value="readPost", method=RequestMethod.GET)
+	public String readPost(HttpSession session, Model model){
+		logger.info("READ POST");
+		
+		//일단은 로그인을 했다고 가정(아이디 : aaa)
+		session.setAttribute("loginId", "aaa");
+		
+		ArrayList<Post> postList = dao.postList();
+		model.addAttribute("postList", postList);
+	
+		return "post/postList";
 	}
 
 }

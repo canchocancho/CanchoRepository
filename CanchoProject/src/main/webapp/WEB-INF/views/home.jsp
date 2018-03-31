@@ -16,6 +16,7 @@
 
 	<ul>
 		<li><a href="writePost">포스트 쓰기</a></li>
+		<li><a href="readPost">포스트 읽기</a></li>
 		<li><a href="user/joinForm">회원가입</a></li>
 		<li><a>로그인</a></li>
 	</ul>
