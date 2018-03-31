@@ -1,6 +1,8 @@
 package lets.eat.cancho.post.controller;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -75,12 +77,12 @@ public class PostController {
 		if(result != 1){
 			//등록실패
 			model.addAttribute("errorMsg", "오류가 발생했습니다.");
-			logger.info("글쓰기 실패");
+			logger.info("포스팅 실패");
 			
 			return "post/postForm";
 		}
 		
-		logger.info("글쓰기 종료");
+		logger.info("포스팅 종료");
 
 		return "redirect:/";
 	}
@@ -99,19 +101,29 @@ public class PostController {
 	}
 	
 	@RequestMapping(value="readOnePost", method=RequestMethod.GET)
-	public String readOnePost(HttpSession session, int post_num){
+	public String readOnePost(HttpSession session, int post_num, Model model){
 		logger.info("READ POST");
 		
 		//포스트 번호에 해당하는 파일명 가져오기(파일명을 직접 가져와도 되긴 하는데 그럼 너무 길어짐)
 		String post_file = dao.readPost(post_num);
+		String result = null;
 		
-		System.out.println(post_file);
-		
-/*		//글번호에 해당하는 댓글 내용 가져오기
-		ArrayList<Reply> replyList = dao.selectReplyAll(boardnum);		
-		
-		model.addAttribute("board", board);
-		model.addAttribute("replyList", replyList);*/
+		try {
+			//파일에서 스트림을 통해 주르륵 읽어들인다
+			BufferedReader fr = new BufferedReader(new FileReader(post_file));
+			
+			String line;
+
+			while ((line = fr.readLine()) != null) {
+				result = line;
+			      }
+			
+			      fr.close();
+			      } catch(Exception e) {
+			    	  e.printStackTrace();
+			      }
+		System.out.println(result);
+		model.addAttribute("postText", result);
 		
 		return "post/readPost";
 	}

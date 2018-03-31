@@ -36,7 +36,7 @@
 	</select>
 	
 	<!-- 포스트 파일명 불러오기 -->
-	<select id="readPost" parameterType="int">
+	<select id="readPost" parameterType="int" resultType="String">
 		select
 			post_file
 		from
