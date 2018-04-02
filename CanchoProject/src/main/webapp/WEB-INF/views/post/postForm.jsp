@@ -32,11 +32,24 @@
        For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
     #userlist {
       position: absolute; left: 0; top: 0; bottom: 0; height: auto;
-      width: 175px;
+      width: 175px; height: 400px;
     }
     #firepad {
       position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
+      height: 400px;
     }
+    
+	.footer {
+	  text-align: center;
+	  width: 100%;
+	  height: 300px;
+	  background-color: red;
+	  position: absolute;
+	  top: 420px;
+	  left: 0px;
+	  margin: 0px;
+	  padding: 0px;
+	}
   </style>
   
   <script type="text/javascript">
@@ -327,6 +340,10 @@
 			<input type="hidden" id="hidden_data" name="hidden_data">
 		</form>
   
+  </div>
+  
+  <div class="footer">
+    <p class="copyright">&copy;copy</p>
   </div>
 
   <script>
