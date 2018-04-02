@@ -48,7 +48,6 @@ public class Post {
 	
 	public Post() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Post(int post_num, String post_title, String post_title_clean, String post_file, String user_id,

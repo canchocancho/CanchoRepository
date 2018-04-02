@@ -18,7 +18,7 @@ public class UserDAO {
 	
 	//특정 회원 조회
 	public Blog_User searchUserOne(String user_id){
-		logger.info("특정 회원조회 시작 - 다오");
+		logger.info("특정 회원 조회 시작 - 다오");
 			
 		Blog_User user = null;
 		UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -29,7 +29,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 			
-		logger.info("특정 회원조회 종료 - 다오");
+		logger.info("특정 회원 조회 종료 - 다오");
 		
 		return user;
 	}
@@ -70,5 +70,5 @@ public class UserDAO {
 		
 		return result;
 	}
-	
+
 }

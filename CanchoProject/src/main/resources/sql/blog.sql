@@ -20,10 +20,14 @@ CREATE TABLE blog_post
     CONSTRAINT BLOG_POST_PK PRIMARY KEY (post_num)
 );
 
--- blog_poset sequence
+-- blog_post sequence
 CREATE SEQUENCE blog_post_seq
 START WITH 1
 INCREMENT BY 1;
+
+
+-- ---------------------------------------------------아래는 아직 안 만든 테이블
+
 
 -- comment table
 CREATE TABLE blog_comment

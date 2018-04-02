@@ -27,7 +27,7 @@ import lets.eat.cancho.user.dao.UserDAO;
 import lets.eat.cancho.user.vo.Blog_User;
 
 @Controller
-@RequestMapping(value="user") //편의성 및 가독성을 위해 그룹화
+@RequestMapping(value="user")
 @SessionAttributes("user")
 public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -52,7 +52,7 @@ public class UserController {
 		Blog_User vo = dao.searchUserOne(user.getUser_id());
 		String userVerified = (user != null) ? vo.getUser_verify() : "N";
 		
-		// E-mail 인증까지 모두 마친 로그인
+		//E-mail 인증까지 모두 마친 로그인
 		if(vo != null && userVerified.equals("Y")) {
 					
 			logger.info("User Login Success");
@@ -61,7 +61,7 @@ public class UserController {
 			session.setAttribute("loginName", vo.getUser_name()); 
 		}
 				
-		// E-mail 인증이 되지 않은 로그인
+		//E-mail 인증이 되지 않은 로그인
 		else if(vo != null && userVerified.equals("N")) {
 			logger.info("User Login Fail - Email Verify Fail");
 		} else {
@@ -126,15 +126,15 @@ public class UserController {
 		int result = dao.joinUser(user);
 		
 		if (result == 1) {
-			// 인증을 위한 E-mail을 보내는 부분		
+			//인증을 위한 E-mail을 보내는 부분		
 		    MimeMessage message = mailSender.createMimeMessage();
 		    MimeMessageHelper messageHelper 
 		                      = new MimeMessageHelper(message, true, "UTF-8");
 		 
-		    messageHelper.setFrom(admin);  					// 보내는사람 (생략 시 정상작동을 안함)
-		    messageHelper.setTo(user.getUser_email());     	// 받는사람 이메일
-		    messageHelper.setSubject("[이메일 인증]"); 		// 메일제목(생략 가능)
-		    messageHelper.setText(							// 메일 내용
+		    messageHelper.setFrom(admin);  					//보내는 사람 (생략 시 정상작동 안 함)
+		    messageHelper.setTo(user.getUser_email());     	//받는 사람 이메일
+		    messageHelper.setSubject("[이메일 인증]"); 			//메일 제목(생략 가능)
+		    messageHelper.setText(							//메일 내용
 		    		  new StringBuffer().append("메일인증 \n")
 						.append("Cancho에 가입해주셔서 감사합니다. \n"
 								+ serverAddress + "user/verify?user_id="

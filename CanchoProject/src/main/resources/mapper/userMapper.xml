@@ -3,7 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="lets.eat.cancho.user.dao.UserMapper">
 	
 	 <!-- 회원 정보 검색 -->
@@ -37,7 +36,7 @@
 	 		)
 	 </insert>
 	 
-	 <!-- E-mail 인증 처리 : 정보승 -->
+	 <!-- E-mail 인증 처리 -->
 	<update id="verifyUser" parameterType="string">
 		update 
 			blog_user
@@ -46,6 +45,11 @@
 		where
 			user_id = #{user_id}
 	</update>
+	 
+	 
+	 
+	 
+	 
 	 
 	 <!-- 회원 정보 수정 -->
 	<!--  <update id="updateMember" parameterType="member">
@@ -61,9 +65,6 @@
 	 		id = #{id} 	
 	 </update> -->
 	 
-	
-	
-	
 	<!-- 회원 로그인 + 회원 정보 조회 : 정보승 -->
 	<!-- <select id="selectUser" parameterType="hashmap" resultType="userinfo">
 	
@@ -85,7 +86,6 @@
 	
 	</select> -->
 
-	
 	<!-- 회원 정보 수정 : 정보승 -->
 	<!-- <update id="updateUserInfo" parameterType="userinfo">
 	
@@ -102,11 +102,4 @@
 	
 	</update> -->
 	 
-	
 </mapper>
-
-
-
-
-
-
