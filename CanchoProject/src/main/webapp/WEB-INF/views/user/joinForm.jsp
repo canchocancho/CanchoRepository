@@ -41,11 +41,6 @@
 			});
 		});
 		
-		//이메일 인증
-		$('#btn2').on('click', function(){
-			
-		});
-		
 		//유효성 검사
 		$('#f1').on('submit',function(){
 			var id = $('#user_id').val();
@@ -93,7 +88,7 @@
 				<th>ID</th>
 				<td>
 					<input type="text" id="user_id" name="user_id" value="${user.user_id }"
-					 placeholder="id중복확인 사용"> 
+					 placeholder="id중복확인 사용" autocomplete="off"> 
 					<!-- name은 vo의 변수명과 같아야한다. -->
 					<input type="button" value="id중복확인" id="btn1">
 					<div id="idCheckResult">
@@ -114,18 +109,15 @@
 				<th>이름</th>
 				<td>
 					<input type="text" name="user_name" id="user_name" value="${user.user_name }"
-					placeholder="이름 입력">
+					placeholder="이름 입력" autocomplete="off">
 				</td>
 			</tr>
 			<tr>
 				<th>이메일</th>
 				<td>
 					<input type="text" name="user_email" id="user_email" value="${user.user_email }"
-					placeholder="이메일 입력">
-					<input type="button" value="이메일 인증" id="btn2">
+					placeholder="이메일 입력" autocomplete="off">
 					<div id="emailCheckResult">
-						<!-- 아이디 중복확인 결과 나타내기 -->
-						
 					</div>
 				</td>
 			</tr>

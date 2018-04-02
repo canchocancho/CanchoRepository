@@ -7,7 +7,7 @@
 <head>
 	<title>POST</title>
 	
-	<script type="text/javascript" src="resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
 
   <meta charset="utf-8" />
   <!-- Firebase -->
@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
   <!-- Firepad -->
-  <link rel="stylesheet" href="resources/css/firepad.css" />
+  <link rel="stylesheet" href="../resources/css/firepad.css" />
   <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 
   <!-- Firepad Userlist -->
-  <link rel="stylesheet" href="resources/css/firepad-userlist.css" />
+  <link rel="stylesheet" href="../resources/css/firepad-userlist.css" />
 
   <style>
     html { height: 100%; }

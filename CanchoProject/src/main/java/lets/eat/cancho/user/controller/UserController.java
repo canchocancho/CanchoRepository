@@ -155,6 +155,7 @@ public class UserController {
 			model.addAttribute("errorMsg", "회원가입 실패");
 			return "user/joinForm";
 		}
+		
 		return "redirect:joinComplete";
 	}
 	

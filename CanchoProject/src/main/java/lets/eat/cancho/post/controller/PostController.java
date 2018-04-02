@@ -17,12 +17,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lets.eat.cancho.HomeController;
 import lets.eat.cancho.post.dao.PostDAO;
 import lets.eat.cancho.post.vo.Post;
 
 @Controller
+@RequestMapping(value="post")
+@SessionAttributes("post")
 public class PostController {
 	
 	@Autowired

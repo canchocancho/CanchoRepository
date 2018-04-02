@@ -39,11 +39,11 @@
 			</tr>
 			<tr>
 				<th>ID</th>
-				<td><input type="text" name="user_id" id="user_id" value="${user_id }"></td>
+				<td><input type="text" name="user_id" id="user_id" value="${user_id }" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<th>Password</th>
-				<td><input type="password" name="user_password" id="user_password"></td>
+				<td><input type="password" name="user_password" id="user_password" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="login"></td>
