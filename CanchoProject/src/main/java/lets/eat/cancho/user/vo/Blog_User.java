@@ -5,17 +5,19 @@ public class Blog_User {
 	private String user_name;
 	private String user_email;
 	private String user_password;
+	private String user_verify;
 	
 	public Blog_User() {
 		super();
 	}
 
-	public Blog_User(String user_id, String user_name, String user_email, String user_password) {
+	public Blog_User(String user_id, String user_name, String user_email, String user_password, String user_verify) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_email = user_email;
 		this.user_password = user_password;
+		this.user_verify = user_verify;
 	}
 
 	public String getUser_id() {
@@ -50,11 +52,18 @@ public class Blog_User {
 		this.user_password = user_password;
 	}
 
+	public String getUser_verify() {
+		return user_verify;
+	}
+
+	public void setUser_verify(String user_verify) {
+		this.user_verify = user_verify;
+	}
+
 	@Override
 	public String toString() {
 		return "Blog_User [user_id=" + user_id + ", user_name=" + user_name + ", user_email=" + user_email
-				+ ", user_password=" + user_password + "]";
+				+ ", user_password=" + user_password + ", user_verify=" + user_verify + "]";
 	}
-
 
 }

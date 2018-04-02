@@ -1,16 +1,12 @@
-<<<<<<< HEAD
--- blod_user table
+-- blog_user table
 CREATE TABLE blog_user
 (
-    user_id          VARCHAR2(45)     NOT NULL, 
+    user_id          VARCHAR2(45)     primary key, 
     user_name        VARCHAR2(45)     NOT NULL, 
-    user_email       VARCHAR2(100)    NOT NULL, 
-    user_password    VARCHAR2(100)    NOT NULL, 
-    CONSTRAINT BLOG_USER_PK PRIMARY KEY (user_id)
+    user_email       VARCHAR2(100)    NOT NULL unique, 
+    user_password    VARCHAR2(100)    NOT NULL,
+    user_verify		 VARCHAR2(50)	  default 'N'
 );
-
-
-alter table blog_user add constraint uq_user_email unique(user_email);
 
 -- blog_post table
 CREATE TABLE blog_post
@@ -24,6 +20,7 @@ CREATE TABLE blog_post
     CONSTRAINT BLOG_POST_PK PRIMARY KEY (post_num)
 );
 
+-- blog_poset sequence
 CREATE SEQUENCE blog_post_seq
 START WITH 1
 INCREMENT BY 1;

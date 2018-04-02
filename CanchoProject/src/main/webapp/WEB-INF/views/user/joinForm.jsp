@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="<c:url value="/resources/js/jquery-3.2.1.js" />"></script>
 <title>[ 회원 가입 폼 ]</title>
-<link href="resources/css/joinForm.css" type="text/css" rel="stylesheet">
 <script type="text/javascript">
 
 	<c:if test ="${errorMsg != null}">
@@ -77,10 +76,7 @@
 				alert("이메일을 입력하세요");
 				return;
 			}
-			
 		});
-		
-	
 	});
 	
 

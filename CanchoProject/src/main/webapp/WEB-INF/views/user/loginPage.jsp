@@ -17,8 +17,8 @@
 	</c:if>
 
 	function formCheck(){
-		var id = document.getElementById('id');
-		var password = document.getElementById('password');
+		var id = document.getElementById('user_id');
+		var password = document.getElementById('user_password');
 		
 		if (id.value == "") {
 			alert("아이디를 입력해주세요");
@@ -39,11 +39,11 @@
 			</tr>
 			<tr>
 				<th>ID</th>
-				<td><input type="text" name="id" id="id" value="${id }"></td>
+				<td><input type="text" name="user_id" id="user_id" value="${user_id }"></td>
 			</tr>
 			<tr>
 				<th>Password</th>
-				<td><input type="password" name="password" id="password"></td>
+				<td><input type="password" name="user_password" id="user_password"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="login"></td>

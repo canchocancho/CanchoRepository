@@ -34,9 +34,6 @@ public class PostController {
 	public String writePost(HttpSession session){
 		logger.info("POST");
 		
-		//일단은 로그인을 했다고 가정(아이디 : aaa)
-		session.setAttribute("loginId", "aaa");
-		
 		return "post/postForm";
 	}
 	
@@ -90,9 +87,6 @@ public class PostController {
 	@RequestMapping(value="postList", method=RequestMethod.GET)
 	public String postList(HttpSession session, Model model){
 		logger.info("POST LIST");
-		
-		//일단은 로그인을 했다고 가정(아이디 : aaa)
-		session.setAttribute("loginId", "aaa");
 		
 		ArrayList<Post> postList = dao.postList();
 		model.addAttribute("postList", postList);
