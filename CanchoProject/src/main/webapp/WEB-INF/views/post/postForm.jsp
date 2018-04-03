@@ -330,7 +330,7 @@
   });
 
   function make() {
-    var sticky = $('<div class="sticky">Drag & Double Click!</div>');
+    var sticky = $('<div class="sticky">원하는 곳에 글을 써보세요!</div>');
     sticky.appendTo('body')
       .css('background-color', $('#color').val())
       .draggable({stop: save})
