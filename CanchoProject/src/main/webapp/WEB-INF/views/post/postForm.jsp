@@ -43,7 +43,7 @@
 	  text-align: center;
 	  width: 100%;
 	  height: 300px;
-	  background-color: red;
+	  background-color: #e6ccff;
 	  position: absolute;
 	  top: 420px;
 	  left: 0px;
@@ -343,7 +343,7 @@
   </div>
   
   <div class="footer">
-    <p class="copyright">&copy;copy</p>
+
   </div>
 
   <script>
