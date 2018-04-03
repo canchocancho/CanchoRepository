@@ -8,6 +8,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>POST</title>
 	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	
 	<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
 
   <meta charset="utf-8" />
@@ -53,6 +56,7 @@
   </style>
   
   <script type="text/javascript">
+  
   var FirepadUserList = (function() {
 	  function FirepadUserList(ref, place, userId, displayName) {
 	    if (!(this instanceof FirepadUserList)) {
