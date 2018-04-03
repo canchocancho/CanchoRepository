@@ -41,7 +41,7 @@ public class PostController {
 	}
 	
 	@RequestMapping(value="write", method=RequestMethod.POST)
-	public String saveData(String post_title, String hidden_data, HttpSession session, Model model){
+	public String saveData(String post_title, String hidden_data, String user_id, HttpSession session, Model model){
 		
 		logger.info("WRITE");
 		
@@ -49,7 +49,8 @@ public class PostController {
         SimpleDateFormat simpleDate = new SimpleDateFormat("_yyMMdd_hhmmss_");
         String finalDate = simpleDate.format(date);
 
-		String loginId = (String)session.getAttribute("loginId");	
+		//String loginId = (String)session.getAttribute("loginId");	
+        String loginId = user_id;
         String fileName = "C:\\canchocancho\\"+loginId+finalDate+Math.random()+".txt";
         
         Post post = new Post();

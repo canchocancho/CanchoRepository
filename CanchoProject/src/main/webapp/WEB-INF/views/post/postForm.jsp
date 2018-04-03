@@ -8,9 +8,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>POST</title>
 	
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	
 	<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
 
   <meta charset="utf-8" />
@@ -342,6 +339,7 @@
 		<form action="write" method="post" name="hidden_form" style="position: relative;">
 			제목 <input type="text" id="post_title" name="post_title" autocomplete="off">
 			<input type="hidden" id="hidden_data" name="hidden_data">
+			<input type="hidden" id="user_id" name="user_id" value="${loginId }">
 		</form>
   
   </div>
