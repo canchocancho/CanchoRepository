@@ -9,6 +9,11 @@
 	<title>POST</title>
 	
 	<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
+	
+	<!-- 텍스트 창 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
 
   <meta charset="utf-8" />
   <!-- Firebase -->
@@ -38,6 +43,21 @@
       position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
       height: 400px;
     }
+    
+    /* 텍스트창 */
+    .sticky {
+	  width: 250px;
+	  height: 50px;
+	  position: absolute;
+	  cursor: pointer;
+	  border: 1px solid #aaa;
+	}
+	
+	textarea {
+	  width: 100%;
+	  height: 100%;
+	}
+.selected {border-color: #f44;}
     
 /* 	.footer {
 	  text-align: center;
@@ -296,6 +316,66 @@
 
 	  return FirepadUserList;
 	})();
+  
+  //텍스트 창
+  $(function() {
+  $('#new').click(function() {
+    make();
+    save();
+  });
+
+  $('#del').click(function() {
+    $('.selected').remove();
+    save();
+  });
+
+  function make() {
+    var sticky = $('<div class="sticky">Drag & Double Click!</div>');
+    sticky.appendTo('body')
+      .css('background-color', $('#color').val())
+      .draggable({stop: save})
+      .dblclick(function() {
+        $(this).html('<textarea>' + $(this).html() + '</textarea>')
+          .children()
+          .focus()
+          .blur(function() {
+            $(this).parent().html($(this).val());
+            save();
+          });
+      }).mousedown(function() {
+        $('.sticky').removeClass('selected');
+        $(this).addClass('selected');
+      });
+    return sticky;
+  }
+
+  function save() {
+    var items = [];
+    $('.sticky').each(function() {
+      items.push(
+        $(this).css('left'),
+        $(this).css('top'),
+        $(this).css('background-color'),
+        $(this).html()
+      );
+    });
+    $.cookie('sticky', items.join('\t'), {expires: 100});
+  }
+
+  function load() {
+    if (!$.cookie('sticky')) return;
+    var items = $.cookie('sticky').split('\t');
+    for (var i = 0; i < items.length; i += 4) {
+      make().css({
+        left: items[i],
+        top: items[i + 1],
+        backgroundColor: items[i + 2]
+      }).html(items[i + 3]);
+    }
+  }
+  load();
+});
+  
   </script>
   
 	<script>
@@ -341,6 +421,15 @@
 			<input type="hidden" id="hidden_data" name="hidden_data">
 			<input type="hidden" id="user_id" name="user_id" value="${loginId }">
 		</form>
+		
+		<!-- 텍스트창 -->
+		<select id="color">
+			<option value="#ffc">黄色</option>
+			<option value="#fcc">赤色</option>
+			<option value="#cfc">緑色</option>
+		</select>
+		<input id="new" type="button" value="new">
+		<input id="del" type="button" value="del">
   
   </div>
   
