@@ -7,9 +7,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>LOGIN</title>
 		<script type="text/javascript">
-			<c:if test ="${errorMsg1 != null}">
-				alert("${errorMsg1}")
-			</c:if>
+
+			<c:if test="${errorMsg !=null }">
+	   		alert('${errorMsg }');
+	 	  	</c:if>
 		
 			function formCheck(){
 				var id = document.getElementById('user_id');

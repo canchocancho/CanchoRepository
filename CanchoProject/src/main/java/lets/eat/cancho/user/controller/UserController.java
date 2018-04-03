@@ -50,25 +50,35 @@ public class UserController {
 		
 		logger.info("로그인 시작");
 		Blog_User vo = dao.searchUserOne(user.getUser_id());
-		String userVerified = (user != null) ? vo.getUser_verify() : "N";
 		
-		//E-mail 인증까지 모두 마친 로그인
-		if(vo != null && userVerified.equals("Y")) {
-					
-			logger.info("User Login Success");
-					
-			session.setAttribute("loginId", vo.getUser_id());	// 로그인 성공시 User ID를 Session에 저장
-			session.setAttribute("loginName", vo.getUser_name()); 
-		}
-				
-		//E-mail 인증이 되지 않은 로그인
-		else if(vo != null && userVerified.equals("N")) {
-			logger.info("User Login Fail - Email Verify Fail");
-		} else {
-			logger.info("User Login Fail");
-		}
-		
-			return "redirect:/";
+	    if(vo == null) {
+		         //아이디가 없는 경우
+		    	 model.addAttribute("errorMsg", "존재하지 않는 아이디입니다.");
+		    	 logger.info("로그인 실패");
+		         return "user/loginPage";
+		         
+		      } else if (!vo.getUser_password().equals(user.getUser_password())) {
+			         //비밀번호가 틀린 경우
+			    	  model.addAttribute("errorMsg", "비밀번호가 잘못되었습니다.");
+			    	  logger.info("로그인 실패");
+			         return "user/loginPage";
+			      }
+
+	    String userVerified = (user != null) ? vo.getUser_verify() : "N";
+	    
+	    if(vo != null && userVerified.equals("Y")) {
+				    	//E-mail 인증까지 모두 마친 로그인
+						logger.info("User Login Success");
+						session.setAttribute("loginId", vo.getUser_id());	// 로그인 성공시 User ID를 Session에 저장
+						session.setAttribute("loginName", vo.getUser_name()); 
+				    	return "redirect:/";
+				    	 
+				      } else {
+				    	//E-mail 인증이 되지 않은 로그인
+					    model.addAttribute("errorMsg", "이메일 인증을 완료해주세요.");
+					    logger.info("이메일 인증 미완료");
+					    return "user/loginPage";
+				      }
 		}
 	
 	@RequestMapping(value="logout", method=RequestMethod.GET)
@@ -162,7 +172,7 @@ public class UserController {
 	/*
 	 * @comment			: 인증 받은 회원의 EmailVerify 속성을 'Y'로 변경한다.
 	 * @param	userid	: E-mail 인증을 받은 회원의 ID
-	 * @author			: 정보승
+	 * @author			: 
 	 */
 	@RequestMapping(value = "verify", method = RequestMethod.GET)
 	public String verifySuccess(@RequestParam String user_id) {
