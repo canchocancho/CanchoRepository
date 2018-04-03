@@ -39,7 +39,7 @@
       height: 400px;
     }
     
-	.footer {
+/* 	.footer {
 	  text-align: center;
 	  width: 100%;
 	  height: 300px;
@@ -49,7 +49,7 @@
 	  left: 0px;
 	  margin: 0px;
 	  padding: 0px;
-	}
+	} */
   </style>
   
   <script type="text/javascript">
@@ -342,9 +342,9 @@
   
   </div>
   
-  <div class="footer">
+<!--   <div class="footer">
 
-  </div>
+  </div> -->
 
   <script>
     function init() {
