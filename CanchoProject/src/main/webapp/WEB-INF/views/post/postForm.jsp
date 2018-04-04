@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>POST</title>
 	
-	<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-3.2.1.js"></script>
 	
 	<!-- 텍스트 창 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
@@ -41,7 +41,7 @@
     }
     #firepad {
       position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
-      height: 400px;
+      height: 500px;
     }
     
     /* 텍스트창 */
@@ -57,19 +57,20 @@
 	  width: 100%;
 	  height: 100%;
 	}
-.selected {border-color: #f44;}
+	
+	.selected {border-color: #f44;}
     
-/* 	.footer {
+ 	.footer {
 	  text-align: center;
 	  width: 100%;
-	  height: 300px;
+	  height: 200px;
 	  background-color: #e6ccff;
 	  position: absolute;
 	  top: 420px;
 	  left: 0px;
-	  margin: 0px;
+	  margin-top: 100px;
 	  padding: 0px;
-	} */
+	}
   </style>
   
   <script type="text/javascript">
@@ -251,7 +252,6 @@
 	  };
 
 	  /** Assorted helpers */
-
 	  function isValidColor(color) {
 	    return typeof color === 'string' &&
 	      (color.match(/^#[a-fA-F0-9]{3,6}$/) || color == 'transparent');
@@ -331,7 +331,7 @@
 
   function make() {
     var sticky = $('<div class="sticky">원하는 곳에 글을 써보세요!</div>');
-    sticky.appendTo('body')
+    sticky.appendTo('.footer')
       .css('background-color', $('#color').val())
       .draggable({stop: save})
       .dblclick(function() {
@@ -379,12 +379,13 @@
   </script>
   
 	<script>
+		//공유
 		function invite() {
 			alert(window.location.href); //공유해야 할 url 주소(이걸 쪽지로 보내야 함)
 		}
 		
+		//저장
 		function save(){
-			
 			var title = document.getElementById("post_title");
 			
 			if(title.value == ''){
@@ -398,6 +399,7 @@
 			hidden_form.hidden_data.value = String(str);
 			hidden_form.submit();
 		}
+		
 	</script>
 </head>
 
@@ -433,10 +435,12 @@
   
   </div>
   
-<!--   <div class="footer">
-
-  </div> -->
-
+	<!-- 로고 등 이미지가 들어가는 div -->
+  <div class="footer">
+		<img src="../resources/img/a.png">
+		<img src="../resources/img/b.png">
+  </div>
+  
   <script>
     function init() {
       //// Initialize Firebase.
