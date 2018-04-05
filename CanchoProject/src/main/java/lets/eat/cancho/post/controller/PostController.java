@@ -125,5 +125,12 @@ public class PostController {
 		
 		return "post/readPost";
 	}
+	
+	@RequestMapping(value="writePost2", method=RequestMethod.GET)
+	public String writePost2(HttpSession session){
+		logger.info("POST");
+		
+		return "post/postForm2";
+	}
 
 }
