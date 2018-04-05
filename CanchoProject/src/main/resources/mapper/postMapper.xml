@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lets.eat.cancho.post.dao.PostMapper">
+
+	<!-- 포스트 저장 -->
+	<insert id="writePost" parameterType="Post">
+		insert into
+			blog_post
+			(
+			post_num
+			,post_title
+			,post_file
+			,user_id
+			)
+		values
+			(
+			blog_post_seq.nextval
+			,#{post_title}
+			,#{post_file}
+			,#{user_id}
+			) 
+	</insert>
+	
+	<!-- 포스트 목록 -->
+	<select id="postList" resultType="Post">
+		select
+			*
+		from
+			blog_post
+		order by
+			post_num
+	</select>
+	
+	<!-- 포스트 파일명 불러오기 -->
+	<select id="readPost" parameterType="int" resultType="String">
+		select
+			post_file
+		from
+			blog_post
+		where
+			post_num = #{post_num}
+	</select>
+
+</mapper>
